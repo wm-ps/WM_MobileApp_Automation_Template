@@ -33,11 +33,11 @@ system-requirements-checker/
 ├── package.json
 └── README.md
 ```
-## Download the APK
+## <img width="28" height="28" alt="image" src="https://github.com/user-attachments/assets/4b19e121-abde-4a82-9458-368339b56834" /> Download the APK
 
 Download the APK from [here](https://drive.google.com/file/d/1r3d6hFYZuzL3X6FIjGhEaP2KdODejx6h) and place it in the following folder in the project:sampleMobileAutomation
 
-## Configure Testing Device
+## <img width="28" height="28" alt="image" src="https://github.com/user-attachments/assets/8247da5b-6abf-4a2e-9e52-34656c3d9714" /> Configure Testing Device
 
 Open folder `samplemobileautomation/wdio.conf.ts` and navigate to **line 71**, under the `capabilities` section.
 
@@ -48,7 +48,7 @@ Update the following values according to your testing device/emulator:
 'appium:platformVersion': '14.0',
 ```
 
-## ⚙️ Installation  
+## <img width="28" height="28" alt="image" src="https://github.com/user-attachments/assets/614612f2-e25a-4a43-8e41-c528574ac022" /> Installation  
 
 Clone this repository and install dependencies:  
 
@@ -59,7 +59,7 @@ npm install
 ```
 ## <img width="28" height="28" alt="image" src="https://github.com/user-attachments/assets/2fa26ff1-98f9-4299-bd7f-71987b10c492" /> Install the App in Emulator
 
-``` Install the downloaded APK in your emulator ```
+Install the downloaded APK in your emulator
 
 ## 🛠️ Usage  
 
