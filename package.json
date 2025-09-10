@@ -1,0 +1,17 @@
+{
+    "name": "preflight-automation-checker",
+    "version": "1.0.0",
+    "description": "Checks Node, Java, Android Studio, and Emulator versions against config.js, run the sample Login scenario Test case",
+    "main": "main.js",
+    "scripts": {
+        "systemCheck": "node main.js",
+        "executeSampleTest": "node runSampleTestcase.js",
+        "showTestReport": "node runSampleTestcase.js showTestReport"
+    },
+    "author": "Vara Sharma",
+    "license": "MIT",
+    "dependencies": {
+        "cli-table3": "^0.6.5",
+        "strip-ansi": "^7.1.0"
+    }
+}
