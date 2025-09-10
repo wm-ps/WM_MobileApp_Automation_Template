@@ -35,6 +35,18 @@ system-requirements-checker/
 └── README.md
 ```
 
+## Configure Testing Device
+
+Open folder `samplemobileautomation/wdio.conf.ts` and navigate to **line 71**, under the `capabilities` section.
+
+Update the following values according to your testing device/emulator:
+
+```ts
+'appium:deviceName': 'emulator-5554',
+'appium:platformVersion': '14.0',
+```
+
+
 ## ⚙️ Installation  
 
 Clone this repository and install dependencies:  
