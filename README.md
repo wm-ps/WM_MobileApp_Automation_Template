@@ -34,6 +34,9 @@ system-requirements-checker/
 ├── package.json
 └── README.md
 ```
+## Download the APK
+
+Download the APK from [here](https://drive.google.com/file/d/1r3d6hFYZuzL3X6FIjGhEaP2KdODejx6h) and place it in the following folder in the project:sampleMobileAutomation
 
 ## Configure Testing Device
 
