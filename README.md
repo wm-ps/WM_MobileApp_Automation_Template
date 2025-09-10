@@ -29,7 +29,8 @@ A Node utility that:
 system-requirements-checker/
 │
 ├── main.js                # Entry script for system checks 
-├── runSampleTestcase.js   # Executes sample login test (automation test cases are inside sampleMobileAutomation folder)
+├── runSampleTestcase.js   # Executes sample login test
+                            (automation test cases are inside sampleMobileAutomation folder)
 ├── config.js              # Defines required versions
 ├── package.json
 └── README.md
