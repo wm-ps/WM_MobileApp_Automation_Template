@@ -48,7 +48,6 @@ Update the following values according to your testing device/emulator:
 'appium:platformVersion': '14.0',
 ```
 
-
 ## ⚙️ Installation  
 
 Clone this repository and install dependencies:  
@@ -58,6 +57,9 @@ git clone https://github.com/<your-username>/system-requirements-checker.git
 cd system-requirements-checker
 npm install
 ```
+## <img width="28" height="28" alt="image" src="https://github.com/user-attachments/assets/2fa26ff1-98f9-4299-bd7f-71987b10c492" /> Install the App in Emulator
+
+``` Install the downloaded APK in your emulator ```
 
 ## 🛠️ Usage  
 
