@@ -8,10 +8,8 @@ A Node utility that:
 ---
 
 ## 📦 Project Details  
-- **Name:** preflight-automation-checker  
-- **Version:** 1.0.0  
-- **Author:** Vara Sharma  
-- **License:** MIT  
+- **Name:** preflight-automation-checker
+- **Version:** 1.0.0
 
 ---
 
