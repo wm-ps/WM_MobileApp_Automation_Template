@@ -1,5 +1,5 @@
 {
-    "name": "preflight-automation-checker",
+    "name": "WM_MobileApp_Automation_Template",
     "version": "1.0.0",
     "description": "Checks Node, Java, Android Studio, and Emulator versions against config.js, run the sample Login scenario Test case",
     "main": "main.js",
