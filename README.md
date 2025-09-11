@@ -1,4 +1,4 @@
-# Preflight Automation Checker  
+# WM Mobile App Automation Template
 
 A Node utility that:  
 - Checks **system dependencies** like Node.js, Java, Android Studio, and Emulator versions against `config.js`.  
@@ -8,7 +8,7 @@ A Node utility that:
 ---
 
 ## 📦 Project Details  
-- **Name:** preflight-automation-checker
+- **Name:** WM_MobileApp_Automation_Template
 - **Version:** 1.0.0
 
 ---
@@ -24,7 +24,7 @@ A Node utility that:
 ## 📂 Project Structure  
 
 ```text
-preflight-automation-checker/
+WM_MobileApp_Automation_Template/
 │
 ├── sampleMobileAutomation # Automation test cases
 ├── main.js                # Entry script for system checks 
@@ -53,8 +53,8 @@ Update the following values according to your testing device/emulator:
 Clone this repository and install dependencies:  
 
 ```bash
-git clone https://github.com/<your-username>/preflight-automation-checker.git
-cd preflight-automation-checker
+git clone https://github.com/<your-username>/WM_MobileApp_Automation_Template.git
+cd WM_MobileApp_Automation_Template
 npm install
 ```
 ## <img width="28" height="28" alt="image" src="https://github.com/user-attachments/assets/2fa26ff1-98f9-4299-bd7f-71987b10c492" /> Install the App in Emulator
