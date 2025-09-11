@@ -24,7 +24,7 @@ A Node utility that:
 ## 📂 Project Structure  
 
 ```text
-system-requirements-checker/
+preflight-automation-checker/
 │
 ├── sampleMobileAutomation # Automation test cases
 ├── main.js                # Entry script for system checks 
@@ -53,8 +53,8 @@ Update the following values according to your testing device/emulator:
 Clone this repository and install dependencies:  
 
 ```bash
-git clone https://github.com/<your-username>/system-requirements-checker.git
-cd system-requirements-checker
+git clone https://github.com/<your-username>/preflight-automation-checker.git
+cd preflight-automation-checker
 npm install
 ```
 ## <img width="28" height="28" alt="image" src="https://github.com/user-attachments/assets/2fa26ff1-98f9-4299-bd7f-71987b10c492" /> Install the App in Emulator
