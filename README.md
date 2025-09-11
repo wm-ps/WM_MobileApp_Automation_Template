@@ -69,7 +69,7 @@ After installation, the following commands are available:
 Checks installed versions against requirements defined in `config.js`.  
 
 ```bash
-npm run systemCheck
+npm run system-check
 ```
 
 ### 🧪 Execute Sample Test Case  
