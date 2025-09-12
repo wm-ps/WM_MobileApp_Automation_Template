@@ -53,7 +53,7 @@ Update the following values according to your testing device/emulator:
 Clone this repository and install dependencies:  
 
 ```bash
-git clone https://github.com/<your-username>/WM_MobileApp_Automation_Template.git
+git clone [https://github.com/<your-username>/WM_MobileApp_Automation_Template.git](https://github.com/wm-ps/WM_MobileApp_Automation_Template.git)
 cd WM_MobileApp_Automation_Template
 npm install
 ```
