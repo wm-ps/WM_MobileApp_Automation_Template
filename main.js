@@ -107,11 +107,11 @@ function checkEmulator(requiredVersion, download) {
   if (version) {
     const match = version.match(/(\d+)/);
     const major = match ? match[1] : "unknown";
-    if (parseFloat(major) === parseFloat(requiredVersion)) {
-      console.log(`✅ Emulator version ${major} is installed.`);
+    if (parseFloat(major) >= parseFloat(requiredVersion)) {
+      console.log(`✅ Emulator version ${major} is installed. (>= ${requiredVersion})`);
     } else {
       console.log(
-        `ℹ️ Emulator version ${major} found, but Minimal version required ${requiredVersion}. Download: ${download}`
+        `ℹ Emulator version ${major} found, but Minimal version required ${requiredVersion}. Download: ${download}`
       );
     }
   } else {
