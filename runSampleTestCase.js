@@ -220,7 +220,7 @@ async function checkApkExists() {
     if (files.includes('BY.apk')) {
       console.log(`✅ APK found at: ${path.join(resolvedPath, 'BY.apk')}`);
     } else {
-      console.log(`❌ APK not found. Please download it from: https://drive.google.com/file/d/1r3d6hFYZuzL3X6FIjGhEaP2KdODejx6h`);
+      console.log(`❌ APK not found at ${projectFolder}. Please download it from: https://drive.google.com/file/d/1r3d6hFYZuzL3X6FIjGhEaP2KdODejx6h`);
       process.exit(1);
     }
   });
