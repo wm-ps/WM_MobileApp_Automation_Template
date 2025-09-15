@@ -5,9 +5,10 @@
     "main": "main.js",
     "scripts": {
         "system-check": "node main.js",
-        "setup-android": "shx echo 'export ANDROID_HOME=$HOME/Library/Android/sdk' >> ~/.zshrc && shx echo 'export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk' >> ~/.zshrc && shx echo 'export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH' >> ~/.zshrc",
         "executeSampleTest": "node runSampleTestcase.js",
-        "showTestReport": "node runSampleTestcase.js showTestReport"
+        "showTestReport": "node runSampleTestcase.js showTestReport",
+        "updatePlatformVersion": "node runSampleTestcase.js updatePlatformVersion",
+        "setup-android": "node runSampleTestcase.js setupAndroid"
     },
     "author": "Vara Sharma",
     "license": "MIT",
