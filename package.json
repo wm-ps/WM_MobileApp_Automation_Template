@@ -6,7 +6,7 @@
     "scripts": {
         "system-check": "node main.js",
         "execute-test": "node runSampleTestcase.js",
-        "show-test-teport": "node runSampleTestcase.js showTestReport",
+        "show-test-report": "node runSampleTestcase.js showTestReport",
         "setup-android": "node runSampleTestcase.js setupAndroid"
     },
     "author": "Vara Sharma",
