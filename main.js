@@ -39,8 +39,8 @@ function checkNode(requiredVersion, download) {
   const version = runCommand("node -v");
   if (version) {
     const major = version.replace("v", "").split(".")[0];
-    if (parseFloat(major) === parseFloat(requiredVersion)) {
-      console.log(`✅ Node.js version ${major} is installed.`);
+    if (parseFloat(major) >= parseFloat(requiredVersion)) {
+      console.log(`✅ Node.js version ${major} is available. (>=${requiredVersion})`);
     } else {
       console.log(
         `⚠️ Node.js version ${major} found, but version ${requiredVersion} is required. Download: ${download}`
@@ -67,8 +67,8 @@ function checkJava(requiredVersion, download) {
       }
     }
 
-    if (parseFloat(major) === parseFloat(requiredVersion)) {
-      console.log(`✅ Java version ${major} is installed. (Detected ${match[1]})`);
+    if (parseFloat(major) >= parseFloat(requiredVersion)) {
+      console.log(`✅ Java version ${major}(${match[1]}) is available. (>=${requiredVersion})`);
     } else {
       console.log(
         `⚠️ Java version ${major} detected (${match ? match[1] : "unknown"}), but version ${requiredVersion} is required. Download: ${download}`
@@ -96,7 +96,8 @@ function checkAndroidStudio(download) {
   }
 
   if (detected) {
-    console.log(`✅ Android Studio is installed. Version: ${detected}`);
+    // console.log(`✅ Android Studio is installed. Version: ${detected}`);
+    console.log(`✅ Android Studio is available.`);
   } else {
     console.log(`❌ Android Studio not detected. Install from: ${download}`);
   }
@@ -108,7 +109,7 @@ function checkEmulator(requiredVersion, download) {
     const match = version.match(/(\d+)/);
     const major = match ? match[1] : "unknown";
     if (parseFloat(major) >= parseFloat(requiredVersion)) {
-      console.log(`✅ Emulator version ${major} is installed. (>= ${requiredVersion})`);
+      console.log(`✅ Emulator version ${major} is available. (>= ${requiredVersion})`);
     } else {
       console.log(
         `ℹ Emulator version ${major} found, but Minimal version required ${requiredVersion}. Download: ${download}`
@@ -145,7 +146,7 @@ function checkXcodeVersion(requiredVersion) {
       if (parseFloat(installed) >= parseFloat(requiredVersion)) {
         resolve({
           ok: true,
-          message: `✅ Xcode ${installed} meets requirement (>= ${requiredVersion})`,
+          message: `✅ Xcode ${installed} available (>= ${requiredVersion})`,
         });
       } else {
         resolve({
