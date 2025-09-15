@@ -83,5 +83,5 @@ npm run execute-test
 Displays the saved test report from the sample test run.  
 
 ```bash
-npm run show-test-teport
+npm run show-test-report
 ```
