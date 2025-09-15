@@ -4,7 +4,7 @@
     "description": "Checks Node, Java, Android Studio, and Emulator versions against config.js, run the sample Login scenario Test case",
     "main": "main.js",
     "scripts": {
-        "system-check": "node main.js",
+        "system-check": "node --no-deprecation main.js",
         "execute-test": "node runSampleTestcase.js",
         "show-test-report": "node runSampleTestcase.js showTestReport",
         "setup-android": "node runSampleTestcase.js setupAndroid"

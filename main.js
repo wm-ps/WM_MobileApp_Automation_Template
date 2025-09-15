@@ -174,7 +174,7 @@ async function displayEmulatorWDIOInfo() {
     }
 
     console.log(
-      "\n\n🔹 Before beginning the tests, please review your current emulator details and ensure they match the capabilities in your  `sampleMobileAutomation/wdio.conf.ts`\n"
+      "\n\n🔹Before starting the tests, please review the emulator configuration details provided below and ensure they align with the capabilities defined in `sampleMobileAutomation/wdio.conf.ts`\n"
     );
 
     for (const line of emulatorLines) {
