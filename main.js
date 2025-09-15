@@ -111,7 +111,7 @@ function checkEmulator(requiredVersion, download) {
       console.log(`✅ Emulator version ${major} is installed.`);
     } else {
       console.log(
-        `⚠️ Emulator version ${major} found, but version ${requiredVersion} is required. Download: ${download}`
+        `ℹ️ Emulator version ${major} found, but Minimal version required ${requiredVersion}. Download: ${download}`
       );
     }
   } else {
