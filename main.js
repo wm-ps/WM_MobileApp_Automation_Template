@@ -1,4 +1,4 @@
-const { execSync, exec, spawnSync } = require("child_process");
+const { execSync, exec, spawnSync, spawn } = require("child_process");
 const os = require("os");
 const dns = require("dns");
 const config = require("./config");
@@ -157,6 +157,58 @@ function checkXcodeVersion(requiredVersion) {
   });
 }
 
+async function displayEmulatorWDIOInfo() {
+  const adbCheck = spawn("adb", ["devices"], { shell: true });
+
+  let output = "";
+  adbCheck.stdout.on("data", (data) => (output += data.toString()));
+  adbCheck.stderr.on("data", (data) => (output += data.toString()));
+
+  adbCheck.on("close", async () => {
+    const lines = output.split("\n").filter(Boolean);
+    const emulatorLines = lines.filter((line) => line.includes("emulator"));
+
+    if (emulatorLines.length === 0) {
+      console.log("📱 No running emulator found.");
+      return;
+    }
+
+    console.log(
+      "\n\n🔹 Before beginning the tests, please review your current emulator details and ensure they match the capabilities in your  `sampleMobileAutomation/wdio.conf.ts`\n"
+    );
+
+    for (const line of emulatorLines) {
+      const emulatorId = line.split("\t")[0];
+      try {
+        const version = await getEmulatorAndroidVersion(emulatorId);
+
+        // WDIO-style message
+        console.log(`📱 'appium:deviceName': '${emulatorId}'`);
+        console.log(`📱 'appium:platformVersion': '${version}'\n\n`);
+      } catch (err) {
+        console.log(`📱 Could not get version for ${emulatorId}: ${err.message}`);
+      }
+    }
+  });
+}
+
+function getEmulatorAndroidVersion(emulatorId) {
+  return new Promise((resolve, reject) => {
+    const adbShell = spawn(
+      "adb",
+      ["-s", emulatorId, "shell", "getprop", "ro.build.version.release"],
+      { shell: true }
+    );
+
+    let version = "";
+    adbShell.stdout.on("data", (data) => (version += data.toString()));
+    adbShell.stderr.on("data", (data) => (version += data.toString()));
+
+    adbShell.on("close", () => resolve(version.trim()));
+    adbShell.on("error", reject);
+  });
+}
+
 async function main() {
   const { requirements } = config;
   const osType = detectOS();
@@ -177,7 +229,7 @@ async function main() {
   }
 
   checkEmulator(requirements.emulator.version, requirements.emulator.download);
-
+  displayEmulatorWDIOInfo();
   if (osType === "macOS") {
     const xcode = await checkXcodeVersion(requirements.xcode.version);
     console.log(xcode.message);

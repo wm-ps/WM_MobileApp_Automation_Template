@@ -72,7 +72,7 @@ export const config: WebdriverIO.Config = {
         // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android',
         'appium:deviceName': 'emulator-5554',
-        'appium:platformVersion': '13',
+        'appium:platformVersion': '16',
         'appium:automationName': 'UiAutomator2',
         'appium:app':'./BY.apk'
     }],

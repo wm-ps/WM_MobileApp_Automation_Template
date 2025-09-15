@@ -76,12 +76,12 @@ npm run system-check
 Runs a sample **login scenario test case**.  
 
 ```bash
-npm run executeSampleTest
+npm run execute-test
 ```
 
 ### 📊 Show Test Report  
 Displays the saved test report from the sample test run.  
 
 ```bash
-npm run showTestReport
+npm run show-test-teport
 ```

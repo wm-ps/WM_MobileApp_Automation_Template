@@ -5,9 +5,8 @@
     "main": "main.js",
     "scripts": {
         "system-check": "node main.js",
-        "executeSampleTest": "node runSampleTestcase.js",
-        "showTestReport": "node runSampleTestcase.js showTestReport",
-        "updatePlatformVersion": "node runSampleTestcase.js updatePlatformVersion",
+        "execute-test": "node runSampleTestcase.js",
+        "show-test-teport": "node runSampleTestcase.js showTestReport",
         "setup-android": "node runSampleTestcase.js setupAndroid"
     },
     "author": "Vara Sharma",
