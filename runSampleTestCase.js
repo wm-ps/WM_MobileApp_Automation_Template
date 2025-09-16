@@ -73,7 +73,11 @@ async function setupAndroid() {
   }
 
   if (platform === "darwin" || platform === "linux") {
-    console.log("💻 === macOS / Linux ===");
+    if (platform === "darwin") {
+      console.log("💻 === macOS ===");
+    } else {
+      console.log("💻 === Linux ===");
+    }
     console.log(`🏠 HOME directory: ${homeDir}`);
     if (detectedSdk) console.log(`💡 Detected SDK path: ${detectedSdk}`);
 
@@ -270,6 +274,10 @@ async function main() {
       await updatePlatformVersion();
     }
     else {
+      await checkApkExists();
+
+    await  checkAppInstalled();
+
   // 1. Check if Android emulator is running
   const adbCheck = spawn("adb", ["devices"], { shell: true });
   let adbOutput = "";
@@ -288,9 +296,6 @@ async function main() {
   }
   console.log("✅ Android emulator is running");
 
-  checkApkExists();
-
-  checkAppInstalled();
   // 2. Navigate to project folder
   process.chdir(projectFolder);
 
