@@ -146,7 +146,7 @@ function checkXcodeVersion(requiredVersion) {
       if (parseFloat(installed) >= parseFloat(requiredVersion)) {
         resolve({
           ok: true,
-          message: `✅ Xcode ${installed} available (>= ${requiredVersion})`,
+          message: `✅ Xcode ${installed} available. (>= ${requiredVersion})`,
         });
       } else {
         resolve({
@@ -170,8 +170,8 @@ async function displayEmulatorWDIOInfo() {
     const emulatorLines = lines.filter((line) => line.includes("emulator"));
 
     if (emulatorLines.length === 0) {
-      console.log("📱 No running emulator found.");
-      return;
+      console.log("⚠️  No running 📱 emulator found, Please start your emulator and redo the system-check");
+      process.exit(1);
     }
 
     console.log(
@@ -182,12 +182,25 @@ async function displayEmulatorWDIOInfo() {
       const emulatorId = line.split("\t")[0];
       try {
         const version = await getEmulatorAndroidVersion(emulatorId);
-
-        // WDIO-style message
-        console.log(`📱 'appium:deviceName': '${emulatorId}'`);
-        console.log(`📱 'appium:platformVersion': '${version}'\n\n`);
+      
+        if (version.includes("offline") || version.includes("closed")) {
+          console.log("⚠️ adb: device offline");
+          console.log("👉 Please wait to turn on your emulator and redo the system-check\n");
+          process.exit(1); // stop further execution
+        } else {
+          // WDIO-style message
+          console.log(`📱 'appium:deviceName': '${emulatorId}'`);
+          console.log(`📱 'appium:platformVersion': '${version}'\n\n`);
+        }
       } catch (err) {
-        console.log(`📱 Could not get version for ${emulatorId}: ${err.message}`);
+        if (err.message.includes("offline")) {
+          console.log("⚠️ adb: device offline");
+          console.log("👉 Please wait to turn on your emulator and redo the system-check\n");
+          process.exit(1); // stop further execution
+        } else {
+          console.log(`📱 Could not get version for ${emulatorId}: ${err.message}`);
+          process.exit(1); // stop emulator details can't be retrieved
+        }
       }
     }
   });
@@ -230,13 +243,14 @@ async function main() {
   }
 
   checkEmulator(requirements.emulator.version, requirements.emulator.download);
-  displayEmulatorWDIOInfo();
   if (osType === "macOS") {
     const xcode = await checkXcodeVersion(requirements.xcode.version);
     console.log(xcode.message);
   } else {
     console.log("ℹ️ Xcode check skipped (not macOS).");
   }
+
+  displayEmulatorWDIOInfo();
 }
 
 main();

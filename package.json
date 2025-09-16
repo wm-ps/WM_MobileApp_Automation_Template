@@ -5,9 +5,9 @@
     "main": "main.js",
     "scripts": {
         "system-check": "node --no-deprecation main.js",
-        "execute-test": "node runSampleTestcase.js",
-        "show-test-report": "node runSampleTestcase.js showTestReport",
-        "setup-android": "node runSampleTestcase.js setupAndroid"
+        "execute-test": "node --no-deprecation runSampleTestcase.js",
+        "show-test-report": "node --no-deprecation runSampleTestcase.js showTestReport",
+        "setup-android": "node --no-deprecation runSampleTestcase.js setupAndroid"
     },
     "author": "Vara Sharma",
     "license": "MIT",
